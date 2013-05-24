@@ -12,6 +12,7 @@ function init(handler) {
 function domReady() {
 	if (document && document.getElementById && document.getElementsByTagName && document.body) {
 		init.ready = true;
+		clearInterval(init.timer);
 		init.timer = null;
 		for (var i = 0, len = init.handlers.length; i < len; i++) (init.handlers.shift())();
 		init.done = true;
